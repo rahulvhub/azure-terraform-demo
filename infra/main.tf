@@ -1,6 +1,6 @@
 resource "azurerm_resource_group" "app" {
   name     = "rg-webapp-prod"
-  location = "East US"
+  location = "Central US"
 }
 
 resource "azurerm_service_plan" "plan" {
@@ -8,7 +8,7 @@ resource "azurerm_service_plan" "plan" {
   resource_group_name = azurerm_resource_group.app.name
   location            = azurerm_resource_group.app.location
   os_type             = "Linux"
-  sku_name            = "F1" 
+  sku_name            = "B1" 
 }
 
 resource "azurerm_linux_web_app" "web" {
